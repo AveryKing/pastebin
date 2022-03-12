@@ -22,7 +22,10 @@ function bodyHasTextProperty(req, res, next) {
 
     }
 
-    next("A 'text' property is required.");
+    next({
+        status:400,
+        message:"A 'text' property is required."
+    });
 
 }
 
@@ -46,7 +49,7 @@ app.post("/pastes",
             text,
             user_id,
         };
-            
+
         pastes.push(newPaste);
 
         res.status(201).json({data: newPaste});
