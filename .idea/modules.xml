@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/starter-robust-server-structure-paste.iml" filepath="$PROJECT_DIR$/.idea/starter-robust-server-structure-paste.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jsbin.iml" filepath="$PROJECT_DIR$/.idea/jsbin.iml" />
     </modules>
   </component>
 </project>
