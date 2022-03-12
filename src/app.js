@@ -32,7 +32,7 @@ app.post("/pastes", (req, res, next) => {
 
   pastes.push(newPaste);
 
-  res.json({ data: newPaste });
+  res.status(201).json({ data: newPaste });
 
 });
 app.get('/pastes/:pasteId', (req,res, next) => {
