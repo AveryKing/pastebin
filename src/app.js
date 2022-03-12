@@ -13,20 +13,14 @@ app.get('/pastes', (req, res) => {
 // New middleware function to validate the request body
 
 function bodyHasTextProperty(req, res, next) {
-
     const {data: {text} = {}} = req.body;
-
     if (text) {
-
         return next(); // Call `next()` without an error message if the result exists
-
     }
-
     next({
         status:400,
         message:"A 'text' property is required."
     });
-
 }
 
 
@@ -51,7 +45,6 @@ app.post("/pastes",
         };
 
         pastes.push(newPaste);
-
         res.status(201).json({data: newPaste});
 
     });
@@ -59,11 +52,10 @@ app.post("/pastes",
 
 app.get('/pastes/:pasteId', (req, res, next) => {
     const foundPaste = pastes.find(x => x.id === Number(req.params.pasteId));
-
     if (foundPaste) {
         return res.json(foundPaste)
     } else {
-        next("paste not found")
+        next({ status: 404, message: `Paste id not found: ${pasteId}` });
     }
 
 })
