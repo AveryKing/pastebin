@@ -1,14 +1,12 @@
 const express = require("express");
 const pastes = require('./data/pastes-data');
+const pastesRouter = require("./pastes/pastes.router");
 const app = express();
 
 app.use(express.json());
 // TODO: Follow instructions in the checkpoint to implement ths API.
 
-
-app.get('/pastes', (req, res) => {
-    res.json({data: pastes});
-})
+app.use("/pastes", pastesRouter);
 
 // New middleware function to validate the request body
 
